@@ -7,9 +7,36 @@
 //
 
 #include <iostream>
+#include <string>
+#include <algorithm>
+#include <sstream>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+using namespace std;
+
+int reverseNum(int x)
+{
+
+    ostringstream os;
+    os << x;
+    string strIn = os.str();
+
+    reverse(strIn.begin(), strIn.end());
+
+    istringstream is(strIn);
+    int result;
+    is >> result;
+
+
+
+
+
+    return 0;
+}
+
+int main(int argc, const char * argv[])
+{
+    int result = reverseNum(123);
+    cout << result;
+
     return 0;
 }
