@@ -15,27 +15,38 @@ using namespace std;
 
 int reverseNum(int x)
 {
-
-    ostringstream os;
-    os << x;
-    string strIn = os.str();
-
-    reverse(strIn.begin(), strIn.end());
-
-    istringstream is(strIn);
     int result;
-    is >> result;
+    if (x >= 0)
+    {
+        ostringstream os;
+        os << x;
+        string strIn = os.str();
 
+        reverse(strIn.begin(), strIn.end());
 
+        istringstream is(strIn);
+        is >> result;
+    }
+    else if (x < 0)
+    {
+        ostringstream os;
+        os << -x;
+        string strIn = os.str();
 
+        reverse(strIn.begin(), strIn.end());
 
+        istringstream is(strIn);
+        is >> result;
 
-    return 0;
+        result = -result;
+    }
+
+    return result;
 }
 
 int main(int argc, const char * argv[])
 {
-    int result = reverseNum(123);
+    int result = reverseNum(-123);
     cout << result;
 
     return 0;
